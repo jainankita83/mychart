@@ -54,8 +54,9 @@ tolerations: []
 
 
 env: 
-  config:
-   NOTASECRET: "123"
-   ANOTHER: "another" 
+   - name: NOTASECRET
+     value: "123"
+   - name: Another
+     value: "another"
 
 affinity: {}
