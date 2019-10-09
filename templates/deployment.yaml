@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{.Values.name}}
+  name: config
 data:
 {{.Values.env.config | toYaml | indent 2}}
 ---
@@ -38,7 +38,7 @@ spec:
           envFrom:
           {{- if .Values.env.config}}
           - configMapRef:
-            name: {{.Values.name}}
+            name: config
           {{- end}}
           ports:
             - name: http
