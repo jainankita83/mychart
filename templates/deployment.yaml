@@ -24,9 +24,9 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-{{ if .Values.cronjob.env }}
+{{ if .Values.env }}
            env:
-{{ toYaml .Values.cronjob.env | indent 12 }}
+{{ toYaml .Values.env | indent 12 }}
 {{ end }}
           ports:
             - name: http
