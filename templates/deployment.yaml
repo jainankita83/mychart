@@ -24,6 +24,11 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: NOTASECRET
+            value: "123"
+          - name: ANOTHER
+            value: "another"
           ports:
             - name: http
               containerPort: 80
