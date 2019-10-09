@@ -1,3 +1,14 @@
+{{- if .Values.env.config}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{.Values.name}}
+data:
+{{.Values.env.config | toYaml | indent 2}}
+---
+{{- end}}
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -24,10 +35,11 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-{{ if .Values.env }}
-          env:
-{{ toYaml .Values.env | indent 12 }}
-{{ end }}
+          envFrom:
+          {{- if .Values.env.config}}
+          - configMapRef:
+            name: {{.Values.name}}
+          {{- end}}
           ports:
             - name: http
               containerPort: 80
