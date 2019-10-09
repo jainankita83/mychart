@@ -53,10 +53,9 @@ nodeSelector: {}
 tolerations: []
 
 
-env: 
-   - name: NOTASECRET
-     value: "123"
-   - name: Another
-     value: "another"
+env:
+  config:
+    NOTASECRET: "123"
+    ANOTHER: "another"
 
 affinity: {}
