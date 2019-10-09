@@ -28,11 +28,6 @@ spec:
           env:
 {{ toYaml .Values.env | indent 12 }}
 {{ end }}
-          env:
-          - name: NOTASECRET
-            value: "123"
-          - name: ANOTHER
-            value: "another"
           ports:
             - name: http
               containerPort: 80
