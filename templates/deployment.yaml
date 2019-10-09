@@ -38,7 +38,7 @@ spec:
           envFrom:
           {{- if .Values.env.config}}
           - configMapRef:
-            name: config
+              name: config
           {{- end}}
           ports:
             - name: http
