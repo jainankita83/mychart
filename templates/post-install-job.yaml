@@ -18,6 +18,7 @@ spec:
   template:
     metadata:
       name: "{{.Release.Name}}"
+      namespace: {{ .Values.namespace}}}
       labels:
         app.kubernetes.io/managed-by: {{.Release.Service | quote }}
         app.kubernetes.io/instance: {{.Release.Name | quote }}
