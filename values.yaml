@@ -2,8 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# For Blue Green Deployments in Harness
 stageName: ${serviceVariable.stageName}
 primaryName: ${serviceVariable.primaryName}
+
+# For the Helm Hook Branch
+nginx: 
+  fullname: hook
 
 
 replicaCount: 1
