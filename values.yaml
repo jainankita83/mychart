@@ -6,6 +6,7 @@
 stageName: ${serviceVariable.stageName}
 primaryName: ${serviceVariable.primaryName}
 
+namespace: rollingdev
 
 replicaCount: 1
 
