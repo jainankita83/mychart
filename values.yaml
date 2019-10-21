@@ -14,7 +14,7 @@ image:
   tag: stable
   pullPolicy: IfNotPresent
 
-imagePullSecrets: []
+imagePullSecrets: false
 nameOverride: ""
 fullnameOverride: ${serviceVariable.name}
 
@@ -60,8 +60,4 @@ env:
     ANOTHER: "another"
 
 affinity: {}
-
-# For the Hook 
-sleepyTime: 1
-restartPolicy: Never
 
