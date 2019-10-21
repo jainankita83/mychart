@@ -34,4 +34,4 @@ spec:
         - name: post-install-job
           image: "alpine:latest"
           # All we're going to do is sleep for a while, then exit.
-          command: ["/bin/sleep", "{{ .Values.sleepyTime }}"]
+          command: ["/bin/sleep", "1"]
