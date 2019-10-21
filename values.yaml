@@ -6,10 +6,6 @@
 stageName: ${serviceVariable.stageName}
 primaryName: ${serviceVariable.primaryName}
 
-# For the Helm Hook Branch
-nginx: 
-  fullname: hook
-
 
 replicaCount: 1
 
