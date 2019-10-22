@@ -2,8 +2,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: "{{.Release.Name}}"
-data:
-  myvalue: "Hello World"
   # namespace: {{ .Values.namespace}}}
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
@@ -13,7 +11,7 @@ data:
   annotations:
     # This is what defines this resource as a hook. Without this line, the
     # job is considered part of the release.
-    "helm.sh/hook": pre-install
+    "helm.sh/hook": post-install
     "helm.sh/hook-weight": "-5"
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
