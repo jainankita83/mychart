@@ -8,7 +8,7 @@ primaryName: ${serviceVariable.primaryName}
 
 ## Namespace Creation True
 createNamespace: true
-namespace: ${infra.kubernetes.namespace}
+namespace: helm
 
 replicaCount: 1
 
