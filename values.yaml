@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 
 # For Blue Green Deployments in Harness
-stageName: ${serviceVariable.stageName}
-primaryName: ${serviceVariable.primaryName}
+# stageName: ${serviceVariable.stageName}
+# primaryName: ${serviceVariable.primaryName}
 
 
 replicaCount: 1
