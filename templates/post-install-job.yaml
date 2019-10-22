@@ -15,12 +15,12 @@ spec:
     metadata:
       name: "{{.Release.Name}}"
       labels:
-  {{ include "mychart.labels" . | indent 4 }}
+{{ include "mychart.labels" . | indent 4 }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     spec:
       restartPolicy: Never
       containers:
       - name: post-install-job
         image: "alpine:3.3"
-        command: ["/bin/sleep"]
+        command: ["echo "Hello World""]
 ---
