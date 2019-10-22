@@ -13,7 +13,7 @@ metadata:
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
-    restartPolicy: Never
+    restartPolicy: "Never"
     spec:
       containers:
       - name: post-install-job
