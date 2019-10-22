@@ -15,7 +15,6 @@ image:
   pullPolicy: IfNotPresent
 
 imagePullSecrets: false
-nameOverride: ""
 fullnameOverride: ${serviceVariable.name}
 
 service:
