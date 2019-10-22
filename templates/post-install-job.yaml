@@ -13,8 +13,8 @@ metadata:
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
-    restartPolicy: OnFailure
     spec:
+      restartPolicy: OnFailure
       containers:
       - name: post-install-job
         image: "alpine:3.3"
