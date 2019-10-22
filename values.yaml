@@ -7,8 +7,7 @@ stageName: ${serviceVariable.stageName}
 primaryName: ${serviceVariable.primaryName}
 
 ## Namespace Creation True
-createNamespace: true
-namespace: helm
+namespace: qa
 
 replicaCount: 1
 
