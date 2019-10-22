@@ -1,16 +1,9 @@
-#
-# Service targeting primary
-#
 apiVersion: v1
 kind: Service
 metadata:
   name: hooks
-  # name: {{.Values.primaryName}}
-  # namespace: {{ .Values.namespace}}}
   labels:
 {{ include "mychart.labels" . | indent 4 }}
-  # annotations:
-  #   harness.io/primary-service: true
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -21,26 +14,3 @@ spec:
   selector:
     app.kubernetes.io/name: {{ include "mychart.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
----
-#
-# Service targeting stage
-#
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: {{.Values.stageName}}
-#   # namespace: {{ .Values.namespace}}}
-#   labels:
-# {{ include "mychart.labels" . | indent 4 }}
-#   # annotations:
-#   #   harness.io/stage-service: true
-# spec:
-#   type: {{ .Values.service.type }}
-#   ports:
-#   - name: http
-#     port: {{ .Values.service.port }}
-#     protocol: TCP
-#     targetPort: http
-#   selector:
-#     app.kubernetes.io/name: {{ include "mychart.name" . }}
-#     app.kubernetes.io/instance: {{ .Release.Name }}

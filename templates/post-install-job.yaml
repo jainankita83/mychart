@@ -1,42 +1,26 @@
-# apiVersion: batch/v1
-# kind: Job
-# metadata:
-#   name: "{{.Release.Name}}"
-#   labels:
-# {{ include "mychart.labels" . | indent 4 }}
-#     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
-#   annotations:
-#     # "helm.sh/hook": post-install
-#     "helm.sh/hook": test-success
-#     # "helm.sh/hook-weight": "5"
-#     # "helm.sh/hook-delete-policy": hook-succeeded
-# spec:
-#   template:
-#     kind: Job
-#     metadata:
-#       name: "{{.Release.Name}}"
-#       labels:
-#     {{ include "mychart.labels" . | indent 4 }}
-#         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
-#     spec:
-#       restartPolicy: Never
-#       containers:
-#       - name: post-install-job
-#         image: "alpine:3.3"
-#         command: ["/bin/sleep","{{default "10" .Values.sleepyTime}}"]
-
-apiVersion: v1
-kind: Pod
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: "{{ include "mychart.fullname" . }}-test-connection"
+  name: "{{.Release.Name}}"
   labels:
 {{ include "mychart.labels" . | indent 4 }}
+    helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
-    "helm.sh/hook": test-success
+    "helm.sh/hook": post-install
+    "helm.sh/hook-weight": "5"
+    "helm.sh/hook-delete-policy": hook-succeeded
 spec:
-  containers:
-    - name: wget
-      image: busybox
-      command: ['wget']
-      args:  ['{{ include "mychart.fullname" . }}:{{ .Values.service.port }}']
-  restartPolicy: Never
+  template:
+    kind: Job
+    metadata:
+      name: "{{.Release.Name}}"
+      labels:
+    {{ include "mychart.labels" . | indent 4 }}
+        helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+    spec:
+      restartPolicy: Never
+      containers:
+      - name: post-install-job
+        image: "alpine:3.3"
+        command: ["/bin/sleep","{{default "10" .Values.sleepyTime}}"]
+
