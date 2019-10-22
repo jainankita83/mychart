@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 Kind: Job
 metadata:
-  name: "{{.Release.Name}}"
+  name: hook
   labels:
     app.kubernetes.io/managed-by: {{.Release.Service | quote }}
     app.kubernetes.io/instance: {{.Release.Name | quote }}
