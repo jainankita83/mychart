@@ -1,5 +1,4 @@
-
-
+name: helmhooks
 replicaCount: 1
 
 image:
