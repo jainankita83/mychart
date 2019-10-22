@@ -16,7 +16,6 @@ metadata:
 spec:
   template:
     spec:
-      restartPolicy: Never
       containers:
       - name: post-install-job
         image: "alpine:3.3"
