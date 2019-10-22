@@ -6,8 +6,6 @@
 stageName: ${serviceVariable.stageName}
 primaryName: ${serviceVariable.primaryName}
 
-## Namespace Creation True
-namespace: qa
 
 replicaCount: 1
 

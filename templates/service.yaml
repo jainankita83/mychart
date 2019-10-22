@@ -5,7 +5,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{.Values.primaryName}}
-  namespace: {{ .Values.namespace}}}
+  # namespace: {{ .Values.namespace}}}
   labels:
 {{ include "mychart.labels" . | indent 4 }}
   annotations:

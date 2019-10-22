@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: hookconf
-  namespace: {{ .Values.namespace}}}
+  # namespace: {{ .Values.namespace}}}
 data:
 {{.Values.env.config | toYaml | indent 2}}
 ---
@@ -14,7 +14,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "mychart.fullname" . }}
-  namespace: {{ .Values.namespace}}}
+  # namespace: {{ .Values.namespace}}}
   labels:
 {{ include "mychart.labels" . | indent 4 }}
 spec:
