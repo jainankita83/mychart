@@ -1,5 +1,5 @@
 apiVersion: batch/v1
-Kind: Job
+kind: Job
 metadata:
   name: "{{.Release.Name}}"
   labels:
@@ -13,6 +13,7 @@ metadata:
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
+    kind: Job
     metadata:
       name: "{{.Release.Name}}"
       labels:
