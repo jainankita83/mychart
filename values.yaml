@@ -6,7 +6,9 @@
 stageName: ${serviceVariable.stageName}
 primaryName: ${serviceVariable.primaryName}
 
-namespace: rollingdev
+## Namespace Creation True
+createNamespace: true
+namespace: ${infra.kubernetes.namespace}
 
 replicaCount: 1
 
