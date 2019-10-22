@@ -3,9 +3,9 @@ kind: Job
 metadata:
   name: "{{.Release.Name}}"
   labels:
-    app.kubernetes.io/managed-by: {{.Release.Service | quote }}
-    app.kubernetes.io/instance: {{.Release.Name | quote }}
-    app.kubernetes.io/version: {{ .Chart.AppVersion }}
+    # app.kubernetes.io/managed-by: {{.Release.Service | quote }}
+    # app.kubernetes.io/instance: {{.Release.Name | quote }}
+    # app.kubernetes.io/version: {{ .Chart.AppVersion }}
     helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   annotations:
     "helm.sh/hook": post-install
@@ -17,8 +17,8 @@ spec:
     metadata:
       name: "{{.Release.Name}}"
       labels:
-        app.kubernetes.io/managed-by: {{.Release.Service | quote }}
-        app.kubernetes.io/instance: {{.Release.Name | quote }}
+        # app.kubernetes.io/managed-by: {{.Release.Service | quote }}
+        # app.kubernetes.io/instance: {{.Release.Name | quote }}
         helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     spec:
       restartPolicy: Never
