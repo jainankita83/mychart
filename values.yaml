@@ -50,5 +50,5 @@ env:
     ANOTHER: "another"
 
 affinity: {}
-restartPolicy: Never
+restartPolicy: OnFailure
 # sleepyTime: "10"
