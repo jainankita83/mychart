@@ -15,12 +15,6 @@ metadata:
     "helm.sh/hook-delete-policy": hook-succeeded
 spec:
   template:
-    metadata:
-      name: "{{.Release.Name}}"
-      labels:
-        app.kubernetes.io/managed-by: {{.Release.Service | quote }}
-        app.kubernetes.io/instance: {{.Release.Name | quote }}
-        helm.sh/chart: "{{.Chart.Name}}-{{.Chart.Version}}"
     spec:
       restartPolicy: Never
       containers:
