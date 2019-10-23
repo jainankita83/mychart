@@ -9,8 +9,8 @@ primaryName: ${serviceVariable.primaryName}
 replicaCount: 1
 
 image:
-  repository: ${artifact.metadata.image}
-  tag: ${artifact.metada.tag}
+  repository: {${artifact.metadata.image}}
+  tag: ${artifact.metadata.tag}
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
