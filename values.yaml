@@ -9,7 +9,7 @@ primaryName: ${serviceVariable.primaryName}
 replicaCount: 1
 
 image:
-  repository: {${artifact.metadata.image}}
+  repository: ${artifact.metadata.image}
   tag: ${artifact.metadata.tag}
   pullPolicy: IfNotPresent
 
