@@ -9,8 +9,8 @@ primaryName: ${serviceVariable.primaryName}
 replicaCount: 1
 
 image:
-  repository: ${artifact.metadata.image}
-  # tag: 
+  repository: nginx
+  tag: alpine
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
