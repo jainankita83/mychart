@@ -19,7 +19,7 @@ fullnameOverride: ${serviceVariable.name}
 
 service:
   type: LoadBalancer
-  port: 8080
+  port: 80
 
 ingress:
   enabled: false
